@@ -1,0 +1,39 @@
+model,kind,family,params,protocol,mae,rmse,smape_trading_days,wape,r2,n_folds
+Naive (last observed day),baseline,baseline,{},30-day recursive,18254.5645,22536.4901,55.1437,56.9087,-0.4216,4
+Naive (last observed day),baseline,baseline,{},1-day-ahead,19522.7928,24487.752,71.152,63.4539,-0.6361,4
+Seasonal naive (same weekday last week),baseline,baseline,{},30-day recursive,11601.4658,16737.8261,38.7201,36.9812,0.2564,4
+Seasonal naive (same weekday last week),baseline,baseline,{},1-day-ahead,11427.7392,16074.0766,38.9811,36.3931,0.3187,4
+Moving average (last 7 days),baseline,baseline,{},30-day recursive,15241.2552,20009.866,38.817,49.0711,-0.0702,4
+Moving average (last 7 days),baseline,baseline,{},1-day-ahead,14979.7846,19535.9801,36.6978,48.5199,-0.0328,4
+"Seasonal average (same weekday, last 4 weeks)",baseline,baseline,{},30-day recursive,10594.1197,15080.3342,36.0135,33.8356,0.4052,4
+"Seasonal average (same weekday, last 4 weeks)",baseline,baseline,{},1-day-ahead,10092.9605,14204.8412,34.9814,32.7041,0.4619,4
+Linear Regression,ml,linear,{},30-day recursive,9364.6662,13129.6386,29.3313,30.2278,0.5341,4
+Linear Regression,ml,linear,{},1-day-ahead,9364.4985,12925.4112,29.4836,30.4138,0.5467,4
+"Random Forest (depth=4, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 4, ""min_samples_leaf"": 1}",30-day recursive,9854.9889,14428.1386,32.939,31.7107,0.4412,4
+"Random Forest (depth=4, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 4, ""min_samples_leaf"": 1}",1-day-ahead,9157.6352,13424.7779,30.9902,29.775,0.5089,4
+"Random Forest (depth=4, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 4, ""min_samples_leaf"": 3}",30-day recursive,9856.0294,14412.3408,32.9139,31.7115,0.4425,4
+"Random Forest (depth=4, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 4, ""min_samples_leaf"": 3}",1-day-ahead,9026.9908,13279.8755,30.7309,29.432,0.5173,4
+"Random Forest (depth=8, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 8, ""min_samples_leaf"": 1}",30-day recursive,9361.2534,13911.8311,31.0883,30.2257,0.4808,4
+"Random Forest (depth=8, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 8, ""min_samples_leaf"": 1}",1-day-ahead,9321.9373,13479.6863,31.6337,30.2155,0.5077,4
+"Random Forest (depth=8, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 8, ""min_samples_leaf"": 3}",30-day recursive,9442.7598,14140.3486,31.437,30.4562,0.4648,4
+"Random Forest (depth=8, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": 8, ""min_samples_leaf"": 3}",1-day-ahead,9146.8771,13288.1545,31.1743,29.7142,0.5195,4
+"Random Forest (depth=None, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 1}",30-day recursive,9146.5104,13600.9052,30.4135,29.5834,0.5013,4
+"Random Forest (depth=None, min_leaf=1)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 1}",1-day-ahead,9271.8357,13303.7362,31.5778,29.9793,0.5198,4
+"Random Forest (depth=None, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 3}",30-day recursive,9268.0716,13923.1475,30.7616,29.9266,0.4797,4
+"Random Forest (depth=None, min_leaf=3)",ml,random_forest,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 3}",1-day-ahead,9070.3722,13155.218,30.904,29.4262,0.5293,4
+"XGBoost (n=200, depth=3, lr=0.03)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.03}",30-day recursive,9996.7181,14226.1055,32.5344,32.1381,0.459,4
+"XGBoost (n=200, depth=3, lr=0.03)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.03}",1-day-ahead,9303.0899,13017.9464,31.2126,30.4097,0.5324,4
+"XGBoost (n=200, depth=3, lr=0.1)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.1}",30-day recursive,9081.3745,13655.6757,29.9244,29.7338,0.4886,4
+"XGBoost (n=200, depth=3, lr=0.1)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.1}",1-day-ahead,9268.3025,13393.1312,31.2435,30.2474,0.5053,4
+"XGBoost (n=200, depth=5, lr=0.03)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 5, ""learning_rate"": 0.03}",30-day recursive,9018.1564,13300.2643,30.0026,29.1704,0.5229,4
+"XGBoost (n=200, depth=5, lr=0.03)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 5, ""learning_rate"": 0.03}",1-day-ahead,8992.3871,12870.031,30.8809,29.2723,0.5449,4
+"XGBoost (n=200, depth=5, lr=0.1)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 5, ""learning_rate"": 0.1}",30-day recursive,9208.2988,13388.1568,30.4992,29.6931,0.517,4
+"XGBoost (n=200, depth=5, lr=0.1)",ml,xgboost,"{""n_estimators"": 200, ""max_depth"": 5, ""learning_rate"": 0.1}",1-day-ahead,9088.2982,12996.2072,30.3592,29.4311,0.5359,4
+"XGBoost (n=400, depth=3, lr=0.03)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 3, ""learning_rate"": 0.03}",30-day recursive,9815.1902,13977.6648,32.2644,31.6641,0.4738,4
+"XGBoost (n=400, depth=3, lr=0.03)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 3, ""learning_rate"": 0.03}",1-day-ahead,9077.5152,12978.3335,30.9729,29.7535,0.5317,4
+"XGBoost (n=400, depth=3, lr=0.1)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 3, ""learning_rate"": 0.1}",30-day recursive,9409.3195,13762.023,30.8775,30.7844,0.477,4
+"XGBoost (n=400, depth=3, lr=0.1)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 3, ""learning_rate"": 0.1}",1-day-ahead,9316.7515,13426.6931,31.2979,30.4986,0.5003,4
+"XGBoost (n=400, depth=5, lr=0.03)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.03}",30-day recursive,8755.5953,13113.363,29.3886,28.4454,0.5332,4
+"XGBoost (n=400, depth=5, lr=0.03)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.03}",1-day-ahead,8970.6526,12885.1042,30.7237,29.1995,0.5435,4
+"XGBoost (n=400, depth=5, lr=0.1)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.1}",30-day recursive,9256.7852,13369.1179,30.9873,30.0008,0.5161,4
+"XGBoost (n=400, depth=5, lr=0.1)",ml,xgboost,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.1}",1-day-ahead,9128.4885,13008.2079,30.588,29.5538,0.535,4

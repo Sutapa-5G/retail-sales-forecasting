@@ -1,0 +1,17 @@
+# Runtime and analysis (versions verified with Python 3.12)
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+xgboost==3.4.1
+joblib==1.5.3
+openpyxl==3.1.5
+matplotlib==3.10.8
+streamlit==1.65.0
+plotly==7.1.0
+
+# Notebooks: ipykernel lets VS Code / Jupyter run them; nbconvert runs them from the command line
+ipykernel==7.4.0
+nbconvert==7.17.1
+
+# Tests
+pytest==9.1.1

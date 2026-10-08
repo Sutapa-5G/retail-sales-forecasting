@@ -1,0 +1,130 @@
+{
+  "model_name": "XGBoost (n=400, depth=5, lr=0.03)",
+  "model_family": "XGBoost",
+  "hyperparameters": {
+    "n_estimators": 400,
+    "max_depth": 5,
+    "learning_rate": 0.03
+  },
+  "target": "revenue (daily gross revenue, GBP)",
+  "feature_columns": [
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "quarter",
+    "week_of_year",
+    "day_of_year",
+    "is_weekend",
+    "is_uk_holiday",
+    "is_year_end_closure",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_28"
+  ],
+  "forecast_horizon_days": 30,
+  "forecast_strategy": "recursive (each day's forecast feeds the next day's lag/rolling features)",
+  "selection_rule": "lowest mean MAE over validation folds, 30-day recursive protocol; test set not used",
+  "split": {
+    "series_start": "2009-12-01",
+    "series_end": "2011-12-08",
+    "pool_end": "2011-11-08",
+    "test_start": "2011-11-09",
+    "test_end": "2011-12-08",
+    "validation_folds": [
+      {
+        "fold": 1,
+        "train_end": "2011-07-11",
+        "val_start": "2011-07-12",
+        "val_end": "2011-08-10"
+      },
+      {
+        "fold": 2,
+        "train_end": "2011-08-10",
+        "val_start": "2011-08-11",
+        "val_end": "2011-09-09"
+      },
+      {
+        "fold": 3,
+        "train_end": "2011-09-09",
+        "val_start": "2011-09-10",
+        "val_end": "2011-10-09"
+      },
+      {
+        "fold": 4,
+        "train_end": "2011-10-09",
+        "val_start": "2011-10-10",
+        "val_end": "2011-11-08"
+      }
+    ]
+  },
+  "saved_model_training_period": {
+    "series_start": "2009-12-01",
+    "series_end": "2011-12-08",
+    "first_training_row": "2009-12-29",
+    "n_training_rows": 710
+  },
+  "validation_metrics_mean_of_folds": {
+    "30-day recursive": {
+      "mae": 8755.595274279276,
+      "rmse": 13113.363020784858,
+      "smape_trading_days": 29.388579594014928,
+      "wape": 28.445365103377405,
+      "r2": 0.5332163477460918
+    },
+    "1-day-ahead": {
+      "mae": 8970.652606407166,
+      "rmse": 12885.104248778938,
+      "smape_trading_days": 30.723662339626465,
+      "wape": 29.199517895323353,
+      "r2": 0.5435135965874924
+    }
+  },
+  "test_metrics_pool_trained_model": {
+    "30-day recursive": {
+      "mae": 8942.870925699874,
+      "rmse": 13761.988221810661,
+      "smape_trading_days": 17.360336725610154,
+      "wape": 18.0362616695367,
+      "r2": 0.7183297219041266
+    },
+    "1-day-ahead": {
+      "mae": 8180.037569437663,
+      "rmse": 13196.807250047777,
+      "smape_trading_days": 15.595585965889377,
+      "wape": 16.497755507689195,
+      "r2": 0.7409900750940719
+    }
+  },
+  "test_note": "Test metrics belong to the same configuration fitted on data up to 2011-11-08 only. The saved model is refit on all data through 2011-12-08 with the same hyperparameters.",
+  "prediction_interval": {
+    "method": "empirical residual quantiles from out-of-sample validation forecasts",
+    "nominal_coverage": 0.8,
+    "residual_quantiles": {
+      "coverage": 0.8,
+      "closed": {
+        "lower": -1436.5378051757816,
+        "upper": 0.0,
+        "n": 18
+      },
+      "open": {
+        "lower": -11402.436429687501,
+        "upper": 21214.10041015625,
+        "n": 102
+      }
+    },
+    "observed_test_coverage": 0.7666666666666667
+  },
+  "random_seed": 42,
+  "versions": {
+    "python": "3.12.10",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.4.1",
+    "joblib": "1.5.3"
+  }
+}

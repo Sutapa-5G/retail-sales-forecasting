@@ -1,0 +1,25 @@
+model,kind,protocol,split,selected_final_model,hyperparameters,mae,rmse,smape_trading_days,wape,r2
+"Seasonal average (same weekday, last 4 weeks)",baseline,30-day recursive,validation (mean of 4 folds),False,{},10594.1197,15080.3342,36.0135,33.8356,0.4052
+Seasonal naive (same weekday last week),baseline,30-day recursive,validation (mean of 4 folds),False,{},11601.4658,16737.8261,38.7201,36.9812,0.2564
+Moving average (last 7 days),baseline,30-day recursive,validation (mean of 4 folds),False,{},15241.2552,20009.866,38.817,49.0711,-0.0702
+Naive (last observed day),baseline,30-day recursive,validation (mean of 4 folds),False,{},18254.5645,22536.4901,55.1437,56.9087,-0.4216
+"XGBoost (n=400, depth=5, lr=0.03)",ml,30-day recursive,validation (mean of 4 folds),True,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.03}",8755.5953,13113.363,29.3886,28.4454,0.5332
+"Random Forest (depth=None, min_leaf=1)",ml,30-day recursive,validation (mean of 4 folds),False,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 1}",9146.5104,13600.9052,30.4135,29.5834,0.5013
+Linear Regression,ml,30-day recursive,validation (mean of 4 folds),False,{},9364.6662,13129.6386,29.3313,30.2278,0.5341
+"Seasonal average (same weekday, last 4 weeks)",baseline,1-day-ahead,validation (mean of 4 folds),False,{},10092.9605,14204.8412,34.9814,32.7041,0.4619
+Seasonal naive (same weekday last week),baseline,1-day-ahead,validation (mean of 4 folds),False,{},11427.7392,16074.0766,38.9811,36.3931,0.3187
+Moving average (last 7 days),baseline,1-day-ahead,validation (mean of 4 folds),False,{},14979.7846,19535.9801,36.6978,48.5199,-0.0328
+Naive (last observed day),baseline,1-day-ahead,validation (mean of 4 folds),False,{},19522.7928,24487.752,71.152,63.4539,-0.6361
+"XGBoost (n=400, depth=5, lr=0.03)",ml,1-day-ahead,validation (mean of 4 folds),True,"{""n_estimators"": 400, ""max_depth"": 5, ""learning_rate"": 0.03}",8970.6526,12885.1042,30.7237,29.1995,0.5435
+"Random Forest (depth=None, min_leaf=1)",ml,1-day-ahead,validation (mean of 4 folds),False,"{""n_estimators"": 300, ""max_depth"": null, ""min_samples_leaf"": 1}",9271.8357,13303.7362,31.5778,29.9793,0.5198
+Linear Regression,ml,1-day-ahead,validation (mean of 4 folds),False,{},9364.4985,12925.4112,29.4836,30.4138,0.5467
+Seasonal naive (same weekday last week),baseline,30-day recursive,test (final 30 days),False,,12763.0483,16162.7514,26.802,25.7409,0.6115
+"Seasonal average (same weekday, last 4 weeks)",baseline,30-day recursive,test (final 30 days),False,,13342.6811,19085.0202,28.4887,26.9099,0.4583
+Naive (last observed day),baseline,30-day recursive,test (final 30 days),False,,18859.3407,26442.5051,24.4351,38.0361,-0.0399
+Moving average (last 7 days),baseline,30-day recursive,test (final 30 days),False,,19329.862,25938.5576,26.8439,38.9851,-0.0006
+"XGBoost (n=400, depth=5, lr=0.03)",ml,30-day recursive,test (final 30 days),True,,8942.8709,13761.9882,17.3603,18.0363,0.7183
+Seasonal naive (same weekday last week),baseline,1-day-ahead,test (final 30 days),False,,10856.3463,16583.7107,20.9034,21.8954,0.591
+"Seasonal average (same weekday, last 4 weeks)",baseline,1-day-ahead,test (final 30 days),False,,11599.7761,16238.4511,24.1109,23.3948,0.6078
+Moving average (last 7 days),baseline,1-day-ahead,test (final 30 days),False,,20314.5696,26287.3953,29.9078,40.9711,-0.0277
+Naive (last observed day),baseline,1-day-ahead,test (final 30 days),False,,24667.5607,31803.8343,58.0278,49.7503,-0.5043
+"XGBoost (n=400, depth=5, lr=0.03)",ml,1-day-ahead,test (final 30 days),True,,8180.0376,13196.8073,15.5956,16.4978,0.741

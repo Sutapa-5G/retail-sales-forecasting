@@ -1,0 +1,22 @@
+{
+  "first_date": "2009-12-01",
+  "last_date": "2011-12-08",
+  "n_calendar_days": 738,
+  "n_trading_days": 603,
+  "total_revenue_gbp": 19332636.29,
+  "total_invoices": 39358,
+  "total_lines": 1012298,
+  "unique_customers": 5850,
+  "share_lines_missing_customer_id": 0.22321,
+  "total_quantity_sold": 10998462,
+  "raw_rows": 1067371,
+  "partial_day_evidence": {
+    "last_day": "2011-12-09",
+    "last_invoice_hour": 12.833,
+    "threshold_hour_at_percentile": 16.018,
+    "percentile": 0.05,
+    "earlier_days_with_last_invoice_at_or_before_this_hour": 0,
+    "earlier_days_compared": 603,
+    "is_partial": true
+  }
+}

@@ -1,0 +1,9 @@
+status,rule,rows,line_value_gbp,pct_of_raw_rows
+sheet_overlap_duplicate,Row appears in both workbook sheets (overlapping dates); one verified-identical copy is kept.,22523,377488.45,2.11
+cancellation,"Invoice number starts with 'C' (cancellation/return). Tracked separately, never netted into revenue.",19165,-1465303.66,1.796
+nonpositive_quantity,"Not a 'C' invoice but quantity <= 0 (stock write-offs, damages, adjustments). Tracked separately.",3393,0.0,0.318
+nonpositive_price,"Unit price <= 0 (free items, adjustments, 'bad debt' entries).",2636,-158676.14,0.247
+non_product,"Non-merchandise stock code (postage, fees, manual/accounting lines, test products).",4489,831031.29,0.421
+same_day_reversal,"Sale fully cancelled the same day by the same customer (same stock code and quantity). Treated as an order correction, not demand.",1250,340429.66,0.117
+partial_last_day,Row belongs to a last calendar day that is only partly recorded.,1617,29644.66,0.151
+included,Used for the daily gross revenue target.,1012298,19332636.31,94.84
